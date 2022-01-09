@@ -37,9 +37,6 @@ flutter:
   assets:
     - assets/lang/
     - assets/icons/
-    - assets/gif/
-    - assets/images/
-    - assets/videos/
 
   fonts:
     - family: Lato
