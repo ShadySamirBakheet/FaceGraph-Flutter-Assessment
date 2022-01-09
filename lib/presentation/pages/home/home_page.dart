@@ -3,7 +3,6 @@ import 'package:chairs_factory/presentation/pages/chiar/add_new_chair_page.dart'
 import 'package:chairs_factory/presentation/widgets/chair/chair_item.dart';
 import 'package:chairs_factory/presentation/widgets/home/app_tool_bar.dart';
 import 'package:chairs_factory/presentation/widgets/home/loading.dart';
-import 'package:chairs_factory/presentation/widgets/home/search_box.dart';
 import 'package:chairs_factory/utils/constants/utils.dart';
 import 'package:chairs_factory/utils/constants/values.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -20,8 +19,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool isSearch = false;
-
   @override
   void initState() {
     super.initState();
@@ -64,9 +61,7 @@ class _HomePageState extends State<HomePage> {
                         onTap: () => Navigator.of(context)
                             .pushNamed(AddNewChairPage.routeName),
                         child: Image.asset(
-                          isSearch
-                              ? 'assets/icons/not_found.png'
-                              : 'assets/icons/add.png',
+                          'assets/icons/add.png',
                           width: MediaQuery.of(context).size.width * .5,
                         ),
                       ),
@@ -87,14 +82,6 @@ class _HomePageState extends State<HomePage> {
         //    shrinkWrap: true,
         padding: EdgeInsets.zero,
         children: [
-          SreachBox(
-            title: translate('Search'),
-            onChanged: (val) {
-              setState(() {
-                isSearch = val!.isNotEmpty;
-              });
-            },
-          ),
           ListView.builder(
             shrinkWrap: true,
             padding: EdgeInsets.zero,
